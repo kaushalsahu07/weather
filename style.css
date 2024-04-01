@@ -23,11 +23,14 @@ body{
 }
 .city-name{
     color: var(--font-color-main);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 60px;
+    gap: 8px;
 }
 .city-name i{
-    font-size: 22px;
+    font-size: 20px;
 }
 .weather-icon{
     display: flex;
@@ -37,4 +40,28 @@ body{
 }
 .weather-icon img{
     width: 70%;
+}
+.weather-description{
+    height: 150px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    color: var(--font-color-main);
+    /* border: 1px solid #000; */
+}
+.show-metric{
+    padding-left: 40px;
+    font-size: 90px;
+    font-weight: 550;
+}
+.weather-details{
+    font-size: 14px;
+    margin: 50px 20px 30px 10px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.weather-details .h-f{
+    display: flex;
+    gap: 5px;
 }

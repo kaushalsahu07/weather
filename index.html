@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- links -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="img/icon.png" href="icon.png">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <!-- title -->
     <title>Weather App</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="screen">
-        <h1 id="city-name" class="city-name"><i class="fa-solid fa-map-pin"></i> Mumbai</h1>
-        <div class="weather-icon"><img src="img/sun.png" id="weather-icon"></div>
+      <div class="city-name">
+        <i class="fa-solid fa-map-pin"></i>
+        <h1 id="city-name">Mumbai</h1>
+      </div>
+      <div class="weather-icon">
+        <img src="img/sun.png" id="weather-icon" />
+      </div>
+      <div class="weather-description">
+        <div class="show-metric" id="metric">30°</div>
+        <div class="weather-details">
+            <div class="weather-main" id="weather-main">Sunnen</div>
+            <div class="h-f">
+                <div class="show-humidity">H: <span id="humidity">60</span></div> || 
+                <div class="show-humidity">F: <span id="feels-like">60</span></div>
+            </div>
+        </div>
+      </div>
     </div>
 
     <!-- script -->
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
