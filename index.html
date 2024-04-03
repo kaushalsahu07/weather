@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- links -->
-    <link rel="icon" type="img/icon.png" href="icon.png">
+    <link rel="icon" type="img/icon.png" href="icon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,25 +15,41 @@
   </head>
   <body>
     <div id="screen">
+      <!-- city name -->
       <div class="city-name">
         <i class="fa-solid fa-map-pin"></i>
         <h1 id="city-name">Mumbai</h1>
       </div>
+      <!-- weather icon -->
       <div class="weather-icon">
         <img src="img/sun.png" id="weather-icon" />
       </div>
+      <!-- weather details -->
       <div class="weather-description">
         <div class="show-metric" id="metric">30°</div>
         <div class="weather-details">
-            <div class="weather-main" id="weather-main">Sunnen</div>
-            <div class="h-f">
-                <div class="show-humidity">H: <span id="humidity">60</span></div> || 
-                <div class="show-humidity">F: <span id="feels-like">60</span></div>
-            </div>
+          <div class="weather-main" id="weather-main">Sunnen</div>
+          <div class="h-f">
+            <div class="show-humidity">H: <span id="humidity">60</span></div>
+            ||
+            <div class="show-humidity">F: <span id="feels-like">60</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- Today-forecast -->
+      <div class="forcasts-box">
+        <div class="today-forecast">
+          <h4>TODAY</h4>
+          <div class="weather-icon-today">
+            <img src="img/sun.png" id="weather-icon" />
+          </div>
+          <div class="temp-today">
+            <span id="temp-min-today">50°</span><span>/ </span><span id="temp-max-today">55°</span>
+          </div>
+         <div class="weather-main-today" id="weather-main">Sunnen</div>
         </div>
       </div>
     </div>
-
     <!-- script -->
     <script src="main.js"></script>
   </body>

@@ -8,6 +8,7 @@
 }
 :root{
     --font-color-main: #332464;
+    --white-color: #fff;
 }
 body{
     width: 100%;
@@ -64,4 +65,28 @@ body{
 .weather-details .h-f{
     display: flex;
     gap: 5px;
+}
+.today-forecast{
+    width: 100px;
+    height: 150px;
+    border-radius: 20px;
+    margin-left: 25px;
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-color);
+}
+.weather-icon-today img{
+    width: 40px;   
+    /* padding: 5px; */
+}
+.temp-today{
+    font-weight: 500;
+}
+.weather-main-today{
+    padding: 3px 0 0 0;
+    font-size: 13px;
 }
