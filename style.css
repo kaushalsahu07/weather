@@ -106,6 +106,22 @@ body{
 }
 .weather-forecast-box{
     width: 70px;
-    height: 80px;
+    height: 95px;
+    border-radius: 15px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 12px;
     border: 1px solid var(--font-color-main);
+}
+.weather-icon-forecast img{
+    width: 30px;
+}
+.temp-weather{
+    font-size: 12px;
+}
+.weather-main-forecast{
+    font-size: 12px;
 }
