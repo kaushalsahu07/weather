@@ -66,12 +66,15 @@ body{
     display: flex;
     gap: 5px;
 }
+.forcasts-box{
+    display: flex;
+    margin-top: 10px;
+}
 .today-forecast{
     width: 100px;
     height: 150px;
     border-radius: 20px;
     margin-left: 25px;
-    margin-top: 10px;
     display: flex;
     gap: 5px;
     flex-direction: column;
@@ -89,4 +92,20 @@ body{
 .weather-main-today{
     padding: 3px 0 0 0;
     font-size: 13px;
+}
+.forecast{
+    width: 230px;
+    height: 150px;
+    margin-left: 10px;
+    border-radius: 20px;
+    background-color: var(--white-color);
+}
+.forecast h5{
+    text-align: left;
+    padding: 15px 0  0 15px;
+}
+.weather-forecast-box{
+    width: 70px;
+    height: 80px;
+    border: 1px solid var(--font-color-main);
 }
