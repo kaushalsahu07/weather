@@ -1,46 +1,133 @@
 let apiKey = "1e3e8f230b6064d27976e41163a82b77";
-let url = `https://api.openweathermap.org/data/2.5/weather?units=metric&`;
 
 navigator.geolocation.getCurrentPosition(async function (position) {
-  var lat = position.coords.latitude;
-  var lon = position.coords.longitude;
-  let respond = await fetch(url + `lat=${lat}&lon=${lon}&` + `appid=${apiKey}`);
-  let data = await respond.json();
+    try {
+        let url = `https://api.openweathermap.org/data/2.5/forecast?&units=metric&`;
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        let respond = await fetch(url + `lat=${lat}&lon=${lon}&` + `appid=${apiKey}`);
+        let data = await respond.json();
 
-  //
-  let cityMain = document.getElementById("city-name");
-  let cityTemp = document.getElementById("metric");
-  let weatherMain = document.querySelector("#weather-main");
-  let mainHumidity = document.getElementById("humidity");
-  let mainFeel = document.getElementById("feels-like");
-  let weatherImg = document.getElementById("weather-icon");
-  let tempMinWeather = document.getElementById("temp-min-today");
-  let tempMaxWeather = document.getElementById("temp-max-today");
+        console.log(data);
+        
+        // display current weather info
+        let cityMain = document.getElementById("city-name");
+        let cityTemp = document.getElementById("metric");
+        let weatherMain = document.querySelectorAll("#weather-main");
+        let mainHumidity = document.getElementById("humidity");
+        let mainFeel = document.getElementById("feels-like");
+        let weatherImg = document.querySelector(".weather-icon");
+        let weatherImgs = document.querySelector(".weather-icons");
+        let tempMinWeather = document.getElementById("temp-min-today");
+        let tempMaxWeather = document.getElementById("temp-max-today");
 
-  //
-  cityMain.innerHTML = data.name;
-  cityTemp.innerHTML = Math.floor(data.main.temp) + "°";
-  weatherMain.innerHTML = data.weather[0].description;
-  mainHumidity.innerHTML = Math.floor(data.main.humidity);
-  mainFeel.innerHTML = Math.floor(data.main.feels_like);
-  tempMinWeather.innerHTML = Math.floor(data.main.temp_min) + "°";
-  tempMaxWeather.innerHTML = Math.floor(data.main.temp_max) + "°";
+        cityMain.innerHTML = data.city.name;
+        cityTemp.innerHTML = Math.floor(data.list[0].main.temp) + "°";
+        weatherMain[0].innerHTML = data.list[0].weather[0].description;
+        weatherMain[1].innerHTML = data.list[0].weather[0].description;
+        mainHumidity.innerHTML = Math.floor(data.list[0].main.humidity);
+        mainFeel.innerHTML = Math.floor(data.list[0].main.feels_like);
+        tempMinWeather.innerHTML = Math.floor(data.list[0].main.temp_min) + "°";
+        tempMaxWeather.innerHTML = Math.floor(data.list[0].main.temp_max) + "°";
 
-   // image changes according to weather
-   if (data.weather[0].main === "Rain") {
-    weatherImg.src = "img/rain.png";
-  } else if (data.weather[0].main === "Clear") {
-    weatherImg.src = "img/sun.png";
-  } else if (data.weather[0].main === "Snow") {
-    weatherImg.src = "img/snow.png";
-  } else if (data.weather[0].main === "Clouds") {
-    weatherImg.src = "img/cloud.png";
-  } else if (data.weather[0].main === "Mist") {
-    weatherImg.src = "img/mist.png";
-  } else if (data.weather[0].main === "Haze") {
-    weatherImg.src = "img/haze.png"
-  }
+        let weatherCondition = data.list[0].weather[0].main.toLowerCase();
 
+        if (weatherCondition === "rain") {
+            weatherImg.src = "img/rain.png";
+            weatherImgs.src = "img/rain.png";
+        } else if (weatherCondition === "clear" || weatherCondition === "clear sky") {
+            weatherImg.src = "img/sun.png";
+            weatherImgs.src = "img/sun.png";
+        } else if (weatherCondition === "snow") {
+            weatherImg.src = "img/snow.png";
+            weatherImgs.src = "img/snow.png";
+        } else if (weatherCondition === "clouds" || weatherCondition === "smoke") {
+            weatherImg.src = "img/cloud.png";
+            weatherImgs.src = "img/cloud.png";
+        } else if (weatherCondition === "mist") {
+            weatherImg.src = "img/mist.png";
+            weatherImgs.src = "img/mist.png";
+        } else if (weatherCondition === "haze") {
+            weatherImg.src = "img/haze.png"  ;
+            weatherImgs.src = "img/haze.png";
+        }
 
-  console.log(data);
+        // Fetch and display 5-day forecast data
+        const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${data.city.name}&appid=${apiKey}&units=metric`;
+
+        fetch(forecastUrl)
+            .then(response => response.json())
+            .then(data => {
+                console.log("5-Day Forecast for", data.city.name);
+                displayForecast(data);
+            })
+            .catch(error => {
+                console.error("Error fetching forecast:", error);
+            });
+
+        function displayForecast(data) {
+            const dailyForecasts = {};
+            let forecast = document.getElementById('forecast-box');
+            let forecastbox = "";
+
+            data.list.forEach(item => {
+                const date = item.dt_txt.split(' ')[0];
+
+                if (!dailyForecasts[date]) {
+                    dailyForecasts[date] = {
+                        temperatureMin: Math.floor(item.main.temp_min) + "°",
+                        temperatureMax: Math.floor(item.main.temp_max) + "°",
+                        description: item.weather[0].description,
+                        weatherImg: item.weather[0].main.toLowerCase()
+                    };
+                }
+            });
+
+            for (const date in dailyForecasts) {
+                let imgSrc = "";
+
+                switch (dailyForecasts[date].weatherImg) {
+                    case "rain":
+                        imgSrc = "img/rain.png";
+                        break;
+                    case "clear":
+                    case "clear sky":
+                        imgSrc = "img/sun.png";
+                        break;
+                    case "snow":
+                        imgSrc = "img/snow.png";
+                        break;
+                    case "clouds":
+                    case "smoke":
+                        imgSrc = "img/cloud.png";
+                        break;
+                    case "mist":
+                        imgSrc = "img/mist.png";
+                        break;
+                    case "haze":
+                        imgSrc = "img/haze.png";
+                        break;
+                    default:
+                        imgSrc = "img/sun.png";
+                }
+
+                forecastbox += `
+                <div class="weather-forecast-box">
+                    <div class="weather-icon-forecast">
+                        <img src="${imgSrc}" />
+                    </div>
+                    <div class="temp-weather">
+                        <span>${dailyForecasts[date].temperatureMin}</span><span>/ </span><span>${dailyForecasts[date].temperatureMax}</span>
+                    </div>
+                    <div class="weather-main-forecast">${dailyForecasts[date].description}</div>
+                </div>`;
+            }
+
+            forecast.innerHTML = forecastbox;
+
+            console.log(data);
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
 });
