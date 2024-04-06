@@ -1,11 +1,18 @@
+//alert for location
+alert("Please Turn on Your Location");
 let apiKey = "1e3e8f230b6064d27976e41163a82b77";
 
 navigator.geolocation.getCurrentPosition(async function (position) {
     try {
-        let url = `https://api.openweathermap.org/data/2.5/forecast?&units=metric&`;
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
-        let respond = await fetch(url + `lat=${lat}&lon=${lon}&` + `appid=${apiKey}`);
+        //longitude and  latitude are used to get city name
+        var map = await fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${apiKey}`)
+        var userdata = await map.json();
+        let loc = userdata[0].name;
+        //By using City name  we can get the weather details of that particular city from OpenWeatherMap API
+        let url = `https://api.openweathermap.org/data/2.5/forecast?&units=metric&`;
+        let respond = await fetch(url + `q=${loc}&` + `appid=${apiKey}`);
         let data = await respond.json();
 
         console.log(data);
