@@ -1,4 +1,3 @@
-//alert for location
 let apiKey = "1e3e8f230b6064d27976e41163a82b77";
 
 navigator.geolocation.getCurrentPosition(async function (position) {
@@ -79,7 +78,7 @@ navigator.geolocation.getCurrentPosition(async function (position) {
 
             data.list.forEach(item => {
                 const date = item.dt_txt.split(' ')[0];
-                let dayName = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+                let dayName = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
                 let day = new Date(date).getDay();
 
                 if (!dailyForecasts[date]) {
