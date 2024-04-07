@@ -7,12 +7,21 @@
   <!-- links -->
   <link rel="icon" type="img/icon.png" href="icon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  <!-- title -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Title -->
   <title>Weather App</title>
 </head>
 
 <body>
+  <!-- nav section -->
+  <nav>
+    <ul>
+      <li><a class="active" href="index.html"><i class="fa-solid fa-location-arrow"></i></a></li>
+      <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+      <li><a href="world.html"><i class="fa-solid fa-earth-americas"></i></a></li>
+    </ul>
+  </nav>
+  <!-- main section -->
   <div id="screen">
     <!-- city name -->
     <div class="city-name">
@@ -55,18 +64,10 @@
        </div>
       </div>
     </div>
-
-    <!-- wavy line -->
-    <div class="wavy"></div>
-    
-     <!-- search box -->
-     <div class="search-screen">
-      <div class="search-box"><input type="text" id="search-box"></div>
-     </div>
   </div>
 
   <!-- script -->
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

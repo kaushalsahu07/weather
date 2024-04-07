@@ -79,11 +79,13 @@ navigator.geolocation.getCurrentPosition(async function (position) {
 
             data.list.forEach(item => {
                 const date = item.dt_txt.split(' ')[0];
+                let dayName = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+                let day = new Date(date).getDay();
 
                 if (!dailyForecasts[date]) {
                     dailyForecasts[date] = {
-                        temperatureMin: Math.floor(item.main.temp_min) + "°",
-                        temperatureMax: Math.floor(item.main.temp_max) + "°",
+                        day_today: dayName[day],
+                        temperature: Math.floor(item.main.temp) + "°",
                         description: item.weather[0].description,
                         weatherImg: item.weather[0].main.toLowerCase()
                     };
@@ -99,7 +101,7 @@ navigator.geolocation.getCurrentPosition(async function (position) {
                         break;
                     case "clear":
                     case "clear sky":
-                        imgSrc = "img/sun.png";
+                        imgSrc = "img/sun.png";9
                         break;
                     case "snow":
                         imgSrc = "img/snow.png";
@@ -120,11 +122,14 @@ navigator.geolocation.getCurrentPosition(async function (position) {
 
                 forecastbox += `
                 <div class="weather-forecast-box">
+                <div class="day-weather">
+                <span>${dailyForecasts[date].day_today}</span>
+                 </div>
                     <div class="weather-icon-forecast">
                         <img src="${imgSrc}" />
                     </div>
                     <div class="temp-weather">
-                        <span>${dailyForecasts[date].temperatureMin}</span><span>/ </span><span>${dailyForecasts[date].temperatureMax}</span>
+                        <span>${dailyForecasts[date].temperature}</span>
                     </div>
                     <div class="weather-main-forecast">${dailyForecasts[date].description}</div>
                 </div>`;
