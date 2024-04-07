@@ -1,8 +1,8 @@
 //alert for location
-alert("Please Turn on Your Location");
 let apiKey = "1e3e8f230b6064d27976e41163a82b77";
 
 navigator.geolocation.getCurrentPosition(async function (position) {
+   
     try {
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
@@ -137,4 +137,8 @@ navigator.geolocation.getCurrentPosition(async function (position) {
     } catch (error) {
         console.error("An error occurred:", error);
     }
-});
+},
+(error) => {
+    // Handle location retrieval error
+    alert("Please Turn on Your Location");
+  });
