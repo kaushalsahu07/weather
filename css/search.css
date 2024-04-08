@@ -27,6 +27,7 @@ body {
     width: 250px;
     height: 60px;
     border-radius: 40px;
+    border: 2px solid var(--white-color);
     background-color: var(--font-color-main);
   }
   nav ul {
