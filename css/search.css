@@ -83,6 +83,18 @@ body {
   }
   .search input::placeholder{
     color: var(--font-color-main);
+  }
+  .message{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+  }
+  .message p{
+    color: var(--font-color-main);
+    text-align: center;
+    padding: 50px;
   }
 }
