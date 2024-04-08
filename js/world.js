@@ -19,7 +19,8 @@ let months_name = [
 let months = new Date().getMonth();
 let year = new Date().getFullYear();
 
-let FullDate = `${months_name[months]} ${date}, ${year}`;
+let FullDate = document.querySelector(".date");
+FullDate.innterHtml = `${months_name[months]} ${date}, ${year}`;
 
 // Weather info
 async function city(cityName) {
