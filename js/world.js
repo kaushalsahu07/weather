@@ -20,7 +20,7 @@ let months = new Date().getMonth();
 let year = new Date().getFullYear();
 
 let FullDate = document.querySelector(".date");
-FullDate.innterHTML = `${months_name[months]} ${date}, ${year}`;
+FullDate.innerHTML = `${months_name[months]} ${date}, ${year}`;
 
 // Weather info
 async function city(cityName) {
