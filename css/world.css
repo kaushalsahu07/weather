@@ -13,7 +13,7 @@
 body {
   background-color: #e0eefa;
 }
-@media (max-width: 800px) {
+@media (max-width: 400px) {
   nav {
     position: fixed;
     left: 0;

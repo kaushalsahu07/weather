@@ -13,7 +13,7 @@
 body {
   background-color: #e0eefa;
 }
-@media (max-width: 800px) {
+@media (max-width: 400px) {
   nav {
     position: fixed;
     left: 0;
@@ -43,5 +43,46 @@ body {
     color: var(--font-color-main);
     border-radius: 100px;
     padding: 8px 15px;
+  }
+  h3{
+    color: var(--font-color-main);
+    text-align: center;
+    margin: 30px 0;
+  }
+  .search{
+    width: 300px;
+    height: 50px;
+     margin-left: auto;
+     margin-right: auto;
+     border-radius: 40px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 1px 2px 2px var(--font-color-main);
+    background-color: var(--white-color);
+  }
+  .search-icon{
+    width: 15px;
+    height: 50px;
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-icon i{
+    font-size: 15px;
+    color: var(--font-color-main);
+  }
+  .search input{
+    width: 85%;
+    padding: 10px;
+    font-size: 15px;
+    color: var(--font-color-main);
+    border: none;
+    outline: none;
+  }
+  .search input::placeholder{
+    color: var(--font-color-main);
+
   }
 }
