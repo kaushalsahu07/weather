@@ -5,8 +5,8 @@ Welcome to the Weather App repository! This project is a web application that pr
 ## Features
 
 - **Live Weather Data**: Get up-to-date weather information for your current location or search for any city worldwide.
-- **5 Days Forecast**: You Can your city 5 days forecast 
-- **You Can See Many City On Explore Section**: You Can See Many Random City Weather On Explore Section 
+- **5 Days Forecast**: You Can See your city 5 days forecast 
+- **Explore Section**: You Can See Many Random City Weather On Explore Section 
 
 ## Getting Started
 
@@ -16,6 +16,10 @@ To get a local copy up and running, follow these simple steps.
 
 - A modern web browser.
 - An API key from [OpenWeatherMap Api](https://home.openweathermap.org/api_keys)
+### Technologies Used 
+
+- **Frontend**: HTML, CSS, JAVASCRIPT
+- **API**: OpenWeatherMap API
 
 ### Installation
 
@@ -37,6 +41,7 @@ let apiKey = "Your API Key";
 
 To use the Weather App, simply enter the name of the city in the search bar and press enter. The app will display the current weather conditions, including temperature, humidity, wind speed, and more.
 
-### Screenshort
+### Acknowledgements
 
-
+- [OpenWeatherMap](https://openweathermap.org/) for Providing the weather API
+- [Fontawesome](https://fontawesome.com/) for icons
