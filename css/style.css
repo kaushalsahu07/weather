@@ -130,6 +130,7 @@ nav ul li a {
 .weather-main-today {
   padding: 3px 0 0 0;
   font-size: 13px;
+  text-align: center;
 }
 .forecast {
   width: 65%;
