@@ -31,11 +31,12 @@ async function city(cityName) {
   console.log(data);
 
   let box = document.querySelector(".box");
+  let pc = document.querySelector(".pc");
 
   if (!box) {
     box = document.createElement("div");
     box.className = "box";
-    document.body.appendChild(box);
+    document.body.pc.appendChild(box);
   }
 
   let weatherBox = document.createElement("div");
