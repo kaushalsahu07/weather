@@ -27,8 +27,16 @@ To get a local copy up and running, follow these simple steps.
 ```sh 
 cd weather
 ```
-3. Open `index.html` in your browser to view the project.
+3. Change API key for all the js files
+```javascript
+let apiKey = "Your API Key";
+``` 
+4. Open `index.html` in your browser to view the project.
 
 ### Usage
 
 To use the Weather App, simply enter the name of the city in the search bar and press enter. The app will display the current weather conditions, including temperature, humidity, wind speed, and more.
+
+### Screenshort
+
+
