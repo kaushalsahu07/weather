@@ -15,7 +15,7 @@ body {
 }
 .pc {
   width: 400px;
-  height: 860px;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid var(--font-color-main);
