@@ -46,3 +46,7 @@ To use the Weather App, simply enter the name of the city in the search bar and 
 
 - [OpenWeatherMap](https://openweathermap.org/) for Providing the weather API
 - [Fontawesome](https://fontawesome.com/) for icons
+
+```
+Note :- For Best Experience See This Website on 400*860 
+```
