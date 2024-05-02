@@ -8,6 +8,11 @@ Welcome to the Weather App repository! This project is a web application that pr
 - **5 Days Forecast**: You Can See your city 5 days forecast 
 - **Explore Section**: You Can See Many Random City Weather On Explore Section 
 
+### Technologies Used 
+
+- **Frontend**: HTML, CSS, JAVASCRIPT
+- **API**: OpenWeatherMap API
+
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps.
@@ -16,10 +21,6 @@ To get a local copy up and running, follow these simple steps.
 
 - A modern web browser.
 - An API key from [OpenWeatherMap Api](https://home.openweathermap.org/api_keys)
-### Technologies Used 
-
-- **Frontend**: HTML, CSS, JAVASCRIPT
-- **API**: OpenWeatherMap API
 
 ### Installation
 
@@ -45,3 +46,7 @@ To use the Weather App, simply enter the name of the city in the search bar and 
 
 - [OpenWeatherMap](https://openweathermap.org/) for Providing the weather API
 - [Fontawesome](https://fontawesome.com/) for icons
+
+`
+Note :- For Best Experience See This Website on 400*860 
+`
