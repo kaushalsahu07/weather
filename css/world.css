@@ -52,12 +52,40 @@ nav ul li a {
   padding: 8px 15px;
 }
 /* main section */
+.section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
 .date {
-  text-align: center;
+  text-align: left;
   font-weight: 500;
   font-size: 20px;
   padding: 30px 0;
   color: var(--font-color-main);
+}
+.button{
+  font-size: 20px;
+  color: var(--font-color-main);
+}
+/*  */
+.section-box{
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.add-section{
+  width: 20rem;
+  height: 500px;
+  top: -60rem;
+  border-radius: 40px;
+  border: 1px solid var(--white-color);
+  position: absolute;
+  transition: .4s ease-in;
+  background-color: var(--font-color-main);
 }
 .box {
   width: 100%;
@@ -65,12 +93,13 @@ nav ul li a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0 30px;
   align-items: center;
   margin-bottom: 40px;
 }
 .weather-box {
   height: 180px;
-  width: 350px;
+  min-width: 280px;
   border-radius: 40px;
   margin-top: 10px;
   display: flex;
@@ -86,7 +115,6 @@ nav ul li a {
   gap: 5px;
   color: var(--white-color);
   height: auto;
-  /* border: 1px solid #000; */
 }
 .city-name {
   font-size: 20px;
@@ -101,7 +129,6 @@ nav ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid #000; */
 }
 .weather-icon img {
   width: 100%;

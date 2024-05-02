@@ -85,6 +85,23 @@ async function city(cityName) {
   weatherBox.appendChild(nameDiv);
   weatherBox.appendChild(weatherIconDiv);
   box.appendChild(weatherBox);
+
+
+  // add section
+  let section = document.querySelector(".add-section");
+  let navBtn = document.querySelector(".button");
+  let navIcon = document.querySelector(".btn-icon")
+
+  navBtn.addEventListener("click", () => {
+    if(section.style.top === "-60rem" ){
+      section.style.top = "20px";
+      navIcon.className = "fa-solid fa-circle-xmark"
+    }else{
+      section.style.top = "-60rem"
+      navIcon.className = "fa-solid fa-circle-plus"
+    }
+  });
+
 }
 
 city("London");

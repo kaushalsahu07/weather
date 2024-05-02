@@ -125,16 +125,17 @@ h3 {
   display: none;
 }
 .box {
-  width: 100%;
+  max-width: 400px;
   height: auto;
-  display: grid;
-  justify-content: center;
-  align-items: center;
+  padding: 0 40px;
+  margin-left: auto;
+  margin-right: auto;
+  border:1px solid black;
   margin-top: 40px;
 }
 .weather-box {
   height: 200px;
-  width: 350px;
+  max-width: 320px;
   border-radius: 40px;
   margin-top: 10px;
   display: flex;
