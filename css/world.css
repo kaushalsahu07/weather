@@ -69,7 +69,7 @@ nav ul li a {
   font-size: 20px;
   color: var(--font-color-main);
 }
-/*  */
+/* section-box */
 .section-box{
   width: auto;
   height: 100%;
@@ -80,7 +80,6 @@ nav ul li a {
 .add-section{
   min-width: 280px;
   height: 250px;
-  /* top: -60rem; */
   border-radius: 40px;
   border: 1px solid var(--white-color);
   position: absolute;
