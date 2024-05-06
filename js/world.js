@@ -93,10 +93,6 @@ async function city(cityName) {
 
     return weatherBox;
   } else {
-   
-    normalMessage.style.display = "none";
-    errorMessage.style.display = "block";
-    addedMessage.style.display = "none";
     return "";
   }
 }
@@ -116,21 +112,19 @@ navBtn.addEventListener("click", () => {
   }
 });
 
-let worked = false;
-
 searchinput.addEventListener("keydown", async function (event) {
   if (event.keyCode === 13 || event.which === 13) {
     const weatherInfo = await city(searchinput.value);
     if (weatherInfo) {
-      worked = true; // Set the flag to true if weatherInfo is not empty
-    }
-    box.prepend(weatherInfo);
-    if (worked) {
       normalMessage.style.display = "none";
       errorMessage.style.display = "none";
       addedMessage.style.display = "block";
-    } 
-
+    } else {
+      normalMessage.style.display = "none";
+      errorMessage.style.display = "block";
+      addedMessage.style.display = "none";
+    }
+    box.prepend(weatherInfo);
   }
 });
 
