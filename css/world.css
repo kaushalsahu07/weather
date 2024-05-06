@@ -73,19 +73,77 @@ nav ul li a {
 .section-box{
   width: auto;
   height: 100%;
+  padding: 0 80px;
   display: flex;
   justify-content: center;
-  position: relative;
 }
 .add-section{
-  width: 20rem;
-  height: 500px;
-  top: -60rem;
+  min-width: 280px;
+  height: 250px;
+  /* top: -60rem; */
   border-radius: 40px;
   border: 1px solid var(--white-color);
   position: absolute;
   transition: .4s ease-in;
   background-color: var(--font-color-main);
+}
+.add-section-title{
+  text-align: center;
+  color: var(--white-color);
+  padding-top: 40px;
+}
+.search {
+  margin-top: 20px;
+  width: 80%;
+  height: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 2px 2px var(--font-color-main);
+  background-color: var(--white-color);
+}
+.search-icon {
+  width: 15px;
+  height: 50px;
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.search-icon i {
+  font-size: 18px;
+  color: var(--font-color-main);
+}
+.search input {
+  width: 80%;
+  padding: 8px;
+  font-size: 15px;
+  color: var(--font-color-main);
+  border: none;
+  outline: none;
+}
+.search input::placeholder {
+  color: var(--font-color-main);
+}
+.messages{
+  color: var(--white-color);
+  font-size: 15px;
+  text-align: center;
+  padding: 30px 0;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.normal-message{
+  display: block;
+}
+.error-message{
+  display: none;
+}
+.added-message{
+  display: none;
 }
 .box {
   width: 100%;
