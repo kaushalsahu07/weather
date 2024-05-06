@@ -80,6 +80,7 @@ nav ul li a {
 .add-section{
   min-width: 280px;
   height: 250px;
+  top: -60rem;
   border-radius: 40px;
   border: 1px solid var(--white-color);
   position: absolute;
