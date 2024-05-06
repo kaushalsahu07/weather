@@ -142,7 +142,7 @@ navigator.geolocation.getCurrentPosition(async function (position) {
         console.error("An error occurred:", error);
     }
 },
-(error) => {
+() => {
     // Handle location retrieval error
-    alert("Please Turn on Your Location");
+    alert("Please turn on your location and refresh the page");
   });
