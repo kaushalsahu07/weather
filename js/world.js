@@ -36,12 +36,12 @@ async function city(cityName) {
     let data = await url.json();
     console.log(data);
 
-    let pcsreen = document.querySelector(".pc");
+    let cityBox = document.querySelector(".city-box");
 
     if (!box) {
       box = document.createElement("div");
       box.className = "box";
-      pcsreen.appendChild(box);
+      cityBox.appendChild(box);
     }
 
     let weatherBox = document.createElement("div");
@@ -66,7 +66,7 @@ async function city(cityName) {
 
     if (data.weather[0].main === "Rain") {
       weatherImg.src = "img/rain.png";
-    } else if (data.weather[0].main === "Clear") {
+    } else if (data.weather[0].main === "Clear" || data.weather[0].main === "Clear Sky") {
       weatherImg.src = "img/sun.png";
     } else if (data.weather[0].main === "Snow") {
       weatherImg.src = "img/snow.png";
@@ -82,6 +82,8 @@ async function city(cityName) {
       weatherImg.src = "img/mist.png";
     } else if (data.weather[0].main === "Haze") {
       weatherImg.src = "img/haze.png";
+    } else if (data.weather[0].main === "Thunderstorm") {
+      weatherImg.src = "img/thunderstorm.png";
     }
 
     weatherIconDiv.appendChild(weatherImg);
@@ -92,6 +94,7 @@ async function city(cityName) {
     box.appendChild(weatherBox);
 
     return weatherBox;
+
   } else {
     return "";
   }
@@ -130,4 +133,6 @@ searchinput.addEventListener("keydown", async function (event) {
 
 city("London");
 city("Paris");
+city("New York");
 city("Mumbai");
+city("Tokyo");

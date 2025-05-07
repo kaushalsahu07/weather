@@ -11,30 +11,20 @@
   --white-color: #fff;
 }
 body {
-  background-color: #e0eefa;
+  background-color: #B4D6F3;
 }
-.pc {
-  width: 400px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid var(--font-color-main);
-  border-radius: 40px;
+
+#screen {
+  background-color: #E0EEFA;
+  width: 100%;
+  height: 100%;
 }
 nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: fit-content;
-  bottom: 5px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 250px;
-  height: 60px;
-  border: 2px solid var(--white-color);
-  border-radius: 40px;
+  height: 70px;
   background-color: var(--font-color-main);
 }
 nav ul {
@@ -51,6 +41,7 @@ nav ul li a {
   border-radius: 100px;
   padding: 8px 15px;
 }
+
 /* main section */
 .section{
   display: flex;
@@ -145,6 +136,9 @@ nav ul li a {
 .added-message{
   display: none;
 }
+.city-box{
+  gap: 10px;
+}
 .box {
   width: 100%;
   height: auto;
@@ -152,6 +146,7 @@ nav ul li a {
   flex-wrap: wrap;
   justify-content: center;
   padding: 0 30px;
+  gap: 10px;
   align-items: center;
   margin-bottom: 40px;
 }
@@ -191,11 +186,16 @@ nav ul li a {
 .weather-icon img {
   width: 100%;
 }
-@media (max-width: 400px) {
-  .pc {
-    border: none;
-    border-radius: none;
-    width: auto;
-    height: auto;
+@media screen and (min-width: 430px) {
+  #screen {
+    max-width: 50%;
+    min-width: 450px;
+    height: 100%;
+    margin: 50px auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.494);
+  }
+  nav{
+    border-radius: 0 0 20px 20px;
   }
 }

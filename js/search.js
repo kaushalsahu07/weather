@@ -44,16 +44,18 @@ async function search(city, state, country){
         weatherImg.src = "img/mist.png";
       } else if (data.weather[0].main === "Haze") {
         weatherImg.src = "img/haze.png";
+      } else if (data.weather[0].main === "Thunderstorm") {
+        weatherImg.src = "img/thunderstorm.png";
       }
-    }else{
-        let box = document.querySelector(".return");
-    box.style.display = "none";
+    } else {
+      let box = document.querySelector(".return");
+      box.style.display = "none";
 
-    let message = document.querySelector(".message");
-    message.style.display = "none";
+      let message = document.querySelector(".message");
+      message.style.display = "none";
 
-    let errormessage = document.querySelector( ".error-message");
-        errormessage.style.display = "block";
+      let errormessage = document.querySelector(".error-message");
+      errormessage.style.display = "block";
     }
 }
 

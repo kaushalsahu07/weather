@@ -18,7 +18,6 @@ body {
   background-color: #E0EEFA;
   width: 100%;
   height: 100%;
-  margin: 50px 0 0 0;
 }
 nav {
   width: 100%;
@@ -168,9 +167,7 @@ nav ul li a {
     max-width: 50%;
     min-width: 450px;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
+    margin: 50px auto;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.494);
   }

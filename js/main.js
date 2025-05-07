@@ -54,8 +54,11 @@ navigator.geolocation.getCurrentPosition(async function (position) {
             weatherImg.src = "img/mist.png";
             weatherImgs.src = "img/mist.png";
         } else if (weatherCondition === "haze") {
-            weatherImg.src = "img/haze.png"  ;
+            weatherImg.src = "img/haze.png";
             weatherImgs.src = "img/haze.png";
+        } else if (data.weather[0].main === "Thunderstorm") {
+            weatherImg.src = "img/thunderstorm.png";
+            weatherImgs.src = "img/thunderstorm.png";
         }
 
         // Fetch and display 5-day forecast data
@@ -114,6 +117,9 @@ navigator.geolocation.getCurrentPosition(async function (position) {
                         break;
                     case "haze":
                         imgSrc = "img/haze.png";
+                        break;
+                    case "thunderstorm":
+                        imgSrc = "img/thunderstorm.png";
                         break;
                     default:
                         imgSrc = "img/sun.png";
