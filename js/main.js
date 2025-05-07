@@ -73,7 +73,7 @@ navigator.geolocation.getCurrentPosition(async function (position) {
 
         function displayForecast(data) {
             const dailyForecasts = {};
-            let forecast = document.getElementById('forecast-box');
+            let forecast = document.getElementById('future-forecast-box');
             let forecastbox = "";
 
             data.list.forEach(item => {
