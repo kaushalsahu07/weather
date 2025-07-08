@@ -61,8 +61,15 @@ nav ul li a {
   height: 350px;
   margin-top: 10px;
 }
+
 .weather-icon-css img {
   width: 80%;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 .weather-description {
   height: 150px;
@@ -149,6 +156,10 @@ nav ul li a {
   flex-shrink: 0;
   align-items: center;
   border: 1px solid var(--font-color-main);
+  transition: all 0.3s ease-in-out;
+}
+.weather-forecast-box:hover {
+  transform: translateY(-5px);
 }
 .day-weather {
   font-size: 15px;
@@ -162,6 +173,7 @@ nav ul li a {
 .weather-main-forecast {
   font-size: 12px;
 }
+
 @media screen and (min-width: 430px) {
   #screen {
     max-width: 50%;
